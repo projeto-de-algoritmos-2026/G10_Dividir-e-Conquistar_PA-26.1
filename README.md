@@ -12,6 +12,7 @@ Tema da unidade: **Divisão e Conquista**.<br>
 
 ---
 ## Link do Vídeo 
+[Vídeo](https://youtu.be/__HO0WAcV2s)
 
 --- 
 ## Sobre
