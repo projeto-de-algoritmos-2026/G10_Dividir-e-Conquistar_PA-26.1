@@ -1,13 +1,22 @@
 # G10 — Par de Pontos mais Próximos (Divisão e Conquista)
 
-Trabalho da disciplina **Projeto de Algoritmos (PA — 2026.1)**, UnB.
-Tema da unidade: **Divisão e Conquista**.
+Trabalho da disciplina **Projeto de Algoritmos (PA — 2026.1)**, UnB.<br>
+Tema da unidade: **Divisão e Conquista**.<br>
+
+## Alunos
+|Matrícula | Aluno |
+| :-------: | :------------------------------: |
+| 23/1038072  |  Gabriel Dantas Bevilaqua Mendes |
+| 23/1026483  |  Maria Eduarda de Amorim Galdino |
+
 
 ---
+## Link do Vídeo 
 
-## Tema aplicado: detecção de risco de colisão no tráfego aéreo
+--- 
+## Sobre
 
-Um sistema de controle de tráfego aéreo (ou um radar de aproximação)
+Um **sistema de controle de tráfego aéreo** (ou um radar de aproximação)
 acompanha, a cada instante, a posição de **centenas ou milhares de
 aeronaves** sobre uma região. Em coordenadas de um mapa, cada aeronave é
 um **ponto `(x, y)`** no plano.
@@ -38,7 +47,7 @@ motiva diretamente a escolha do algoritmo.
 
 ## Como rodar
 
-Requer apenas **Python 3.8+** (sem dependências externas).
+Requisitos: **Python 3.8+** (sem dependências externas).
 
 ```bash
 cd app
@@ -56,20 +65,22 @@ python3 main.py --n 100 --testes
 python3 main.py --benchmark
 ```
 
-### Saída esperada (resumida)
+---
 
-```
-SISTEMA DE MONITORAMENTO DE TRÁFEGO AÉREO
-Algoritmo: Par de Pontos mais Próximos — O(n log n)
-...
-Par mais próximo detectado:
-  Aeronave A : (996.12, 529.11)
-  Aeronave B : (997.53, 509.52)
-  Distância  : 19.64 unidades
-  Tempo D&C  : 0.09 ms
+## Screenshots
 
-⚠  ALERTA: distância abaixo do limite de segurança!
-```
+### Menu Principal 
+![Menu principal](img/menu.png)
+
+### Demo do Radar
+![Demo do Radar](img/demo.png)
+
+
+### Testes de Corretude 
+![Testes de Corretude](img/testes.png)
+
+### Benchmark
+![Benchmark](img/benchmark.png)
 
 ---
 
@@ -82,19 +93,19 @@ app/
 └── main.py           # CLI: demo do radar, testes de corretude e benchmark
 ```
 
-### `base.py`
+### base.py
 - `distancia(p, q)` — distância euclidiana.
 - `forca_bruta(pontos)` — O(n²). Também é o **caso base** da recursão (n ≤ 3).
 - `gerar_pontos(n, seed=...)` — gera n pontos aleatórios (aeronaves).
 - `ler_pontos(caminho)` — lê pontos de um arquivo `.txt`.
 - `ordenar_por_x` / `ordenar_por_y` — pré-processamento Px / Py.
 
-### `closest_pair.py`
+### closest_pair.py
 - `closest_pair(pontos)` — API pública, O(n log n).
 - `_closest_pair_rec(px, py)` — recursão sobre as duas metades.
 - `_verificar_faixa(faixa, d)` — combinação na faixa central de largura 2d.
 
-### `main.py`
+### main.py
 CLI com três modos:
 - **demo** (default): cenário do radar, mostra par mais próximo + alerta.
 - **`--testes`**: compara D&C com força bruta em vários casos.
@@ -183,10 +194,3 @@ e `distancia` de `base.py`. `main` usa `gerar_pontos`, `forca_bruta` e
 `distancia` da base, e `closest_pair` do núcleo D&C.
 
 ---
-
-## Disciplina
-
-- **Curso:** Engenharia de Software — UnB
-- **Disciplina:** Projeto de Algoritmos (PA) — 2026.1
-- **Unidade:** Divisão e Conquista
-- **Grupo:** G10
