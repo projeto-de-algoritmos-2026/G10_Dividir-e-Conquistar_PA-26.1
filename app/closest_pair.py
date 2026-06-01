@@ -1,15 +1,9 @@
-"""
-Núcleo de Divisão e Conquista para o Par de Pontos mais Próximos.
-Tema: detecção de risco de colisão no tráfego aéreo.
-"""
-
 import math
 import random
 
 
-# ---------------------------------------------------------------------------
-# Stubs temporários (substituídos quando existir base.py)
-# ---------------------------------------------------------------------------
+# Stubs temporários substitídos com a existência do base.py
+
 
 def _distancia_stub(p, q):
     """Distância euclidiana — stub até base.py ficar pronto."""
@@ -30,9 +24,9 @@ def _forca_bruta_stub(pontos):
     return melhor_par, melhor_dist
 
 
-# ---------------------------------------------------------------------------
+
 # Tente importar as funções reais de base.py; se não existir, usa stubs
-# ---------------------------------------------------------------------------
+
 
 try:
     from base import distancia, forca_bruta          # type: ignore
@@ -41,9 +35,9 @@ except ImportError:
     forca_bruta = _forca_bruta_stub
 
 
-# ---------------------------------------------------------------------------
+
 # Passo de combinação — verifica a faixa central (strip)
-# ---------------------------------------------------------------------------
+
 
 def _verificar_faixa(faixa_por_y, d):
     """
@@ -71,9 +65,9 @@ def _verificar_faixa(faixa_por_y, d):
     return melhor_par, melhor_dist
 
 
-# ---------------------------------------------------------------------------
+
 # Função recursiva principal
-# ---------------------------------------------------------------------------
+
 
 def _closest_pair_rec(px, py):
     """
@@ -128,9 +122,9 @@ def _closest_pair_rec(px, py):
     return melhor_par, d
 
 
-# ---------------------------------------------------------------------------
+
 # API pública
-# ---------------------------------------------------------------------------
+
 
 def closest_pair(pontos):
     """
@@ -153,7 +147,6 @@ def closest_pair(pontos):
         raise ValueError("São necessários pelo menos 2 pontos.")
 
     # Pré-processamento: ordenar por X e por Y
-    # (Pessoa 1 pode fornecer Px/Py pré-ordenados; aqui fazemos internamente
     #  para garantir funcionamento autônomo)
     px = sorted(pontos, key=lambda p: (p[0], p[1]))
     py = sorted(pontos, key=lambda p: (p[1], p[0]))
